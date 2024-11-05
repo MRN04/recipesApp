@@ -57,3 +57,4 @@ const object = {
 type Meal = typeof object
 export const allMeals = atom<Meal[]>([])
 export const filteredMeals = atom<Meal[]>([])
+export const recipesInCart = atom<object[]>([])

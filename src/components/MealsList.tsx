@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useAtom, useAtomValue } from "jotai";
 import { useEffect } from "react";
-import { allMeals, filteredMeals as filteredMealsAtom, itemId } from "../store";
+import { allMeals, filteredMeals as filteredMealsAtom, itemId, recipesInCart } from "../store";
 import "../css/MealsList.css";
 import RecipeDialog from "./RecipeDialog";
 import { usePagination } from "../hooks/usePagination";
@@ -29,12 +29,20 @@ export default function MealsList() {
         arr: filteredMeals,
         pageSize: 6,
     });
+    const [inCart, setInCart] = useAtom(recipesInCart)
+
     useEffect(() => {
         if (queryMeals.data) {
             setMeals(queryMeals.data.meals);
             setFilteredMeals(queryMeals.data.meals);
         }
     }, [queryMeals.data]);
+
+    const addToCart = (meal:object) => {
+        const cartArr = [...inCart, meal]
+        setInCart(cartArr)
+        alert("Recipe added to cart")
+    }
 
     return (
         <div className="">
@@ -50,7 +58,7 @@ export default function MealsList() {
                             </div>
                             <div className="btn-row">
                                 <Link to={`/recipes/${meal.idMeal}`}>Open full recipe</Link>
-                                <button></button>
+                                <button onClick={() => {addToCart(meal)}}>Add to cart</button>
                             </div>
                         </div>
                     </div>

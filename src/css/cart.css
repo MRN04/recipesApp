@@ -1,0 +1,19 @@
+.selected-recipes-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .selected-recipe {
+        padding: 10px 15px;
+        border: 1px solid;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+.selected-recipes-title {
+    text-align: start;
+    margin-bottom: 20px;
+}
