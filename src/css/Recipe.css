@@ -1,0 +1,28 @@
+.recipe-page {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+
+    .image img {
+        max-width: 500px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .ingredients {
+            display: flex;
+            padding-left: 30px;
+            gap: 40px;
+            text-align: start;
+
+            .measures {
+                list-style-type: none;
+                opacity: .7;
+
+            }
+        }
+    }
+}

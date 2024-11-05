@@ -1,0 +1,44 @@
+.meals-list {
+    display: flex;
+
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .meal-card {
+        border: 1px solid grey;
+        overflow: hidden;
+        border-radius: 20px;
+        width: 260px;
+
+        img {
+            max-width: 260px;
+        }
+
+        .content {
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .characteristics {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+.pagination {
+    margin-top: 50px;
+    color: #fff;
+
+    ul {
+        justify-content: center;
+        
+        li button {
+            color: #fff;
+            font-size: 16px;
+        }
+    }
+}
